@@ -1,0 +1,24 @@
+.nav-fixed-top {
+	top:0px;
+}
+
+.nav-bar .user-nav {
+    margin: 10px 10px 0 0;
+}
+
+.navbar-brand {
+	margin-left: 20px;
+}
+
+ .navbar .navbar-collapse {
+    margin-top: 30px;
+} 
+
+.navbar .navbar-collapse .navbar-nav li {
+    padding-right: 20px !important;  
+}
+
+.navbar-inverse {
+	background-color: #cf4646 !important;
+    border-color: transparent !important;
+}

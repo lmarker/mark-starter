@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人中心--后台管理</title>
+<meta name="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/my.css}" />
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<span class="navbar-brand ftn-bolder">个人中心</span>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">我的主页 <span class="sr-only">(current)</span></a></li>
+				<li><a href="markHalling">码客大厅</a></li>
+				<li><a href="daily/up">签到</a></li>
+			</ul>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false"><span
+							class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span th:text="${user}"></span><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/person/insert}">信息完善</a></li>
+							<li><a href="#">消息中心<span class="badge">42</span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a th:href="@{/logout}">注销登陆</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col-md-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="active"><a href="#">朋友圈</a></li>
+				<li role="presentation"><a href="#">我的博客</a></li>
+			</ul>
+		</div>
+		<div class="col-md-10">
+			<div class="container">
+				<div id="header">
+					<div class="jumbotron back"></div>
+				</div>
+				<div id="body">
+					<div class="row">
+						<div class="col-md-12 col-md-push-0">
+							<div class="col-md-12">
+								<h4>
+									好友列表 <span class="label label-success">所有信息</span>
+								</h4>
+								<hr />
+								<div>
+									<table class="table table-hover">
+										<thead>
+											<th>姓名</th>
+											<th>性别</th>
+											<th>年龄</th>
+											<th>电话</th>
+											<th>email</th>
+											<th>爱好</th>
+											<th width="140px">操作</th>
+										</thead>
+										<tbody th:each="message:${list}">
+											<tr>
+
+												<td th:text="${message.name}"></td>
+												<td th:text="${message.sex}"></td>
+												<td th:text="${message.age}"></td>
+												<td th:text="${message.number}"></td>
+												<td th:text="${message.email}"></td>
+												<td th:text="${message.hobby}"></td>
+												<td><a class="btn btn-danger"
+													th:href="@{person/delete(id=${message.personid})}">删除</a> <a
+													class="btn btn-primary"
+													th:href="@{person/detail(id=${message.personid})}">详细</a></td>
+											</tr>
+										</tbody>
+									</table>
+									<p id="more" style="display:none"></p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

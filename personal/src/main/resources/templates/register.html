@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8" />
+
+
+</head>
+
+<body>
+	<h1>欢迎使用Spring Security!</h1>
+	<table>
+	<form method="post" th:object="${user}" th:action="@{register/reg}">
+		<tr>
+			<td>用户名：</td>
+			<td><input type="text" th:field="*{username}"/></td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td><input type="password" th:field="*{password}"/></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="提交"/></td>
+			<td><input type="reset" value="重置"/></td>
+		</tr>
+	</form>
+	</table>
+</body>
+</html>

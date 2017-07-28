@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/my.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<div id="header">
+			<div class="jumbotron back">
+				<h2>通讯录</h2>
+				<p>这里可以上传好友的照片，还可以增添一些描述</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="../index" role="button">回到首页</a>
+				</p>
+			</div>
+		</div>
+		<div id="body">
+			<div class="row">
+				<div class="col-md-12 col-md-push-0">
+					<span class="label label-info">语言记录</span>
+
+					<hr />
+					<div class="col-md-2">
+						<img width="140px" height="140px" th:src="@{'http://192.168.9.38:8080/pic/'+${info.url}}" alt=""
+							class="img-responsive img-thumbnail" />
+						<table class="table details">
+							<tr>
+								<td width="70px">姓名：</td>
+								<td th:text="${info.name}"></td>
+							</tr>
+							<tr>
+								<td>年龄：</td>
+								<td th:text="${info.age}"></td>
+							</tr>
+							<tr>
+								<td>性别：</td>
+								<td th:text="${info.sex}"></td>
+							</tr>
+							<tr>
+								<td>爱好：</td>
+								<td th:text="${info.hobby}"></td>
+							</tr>
+							<!-- 	<p>姓名:<span th:text="${info.name}"></span></p>
+							<p>年龄:<span th:text="${info.age}"></span></p>
+							<p>性别:<span th:text="${info.sex}"></span></p>
+							<p>爱好:<span th:text="${info.hobby}"></span></p> -->
+						</table>
+					</div>
+					<div class="col-md-10">
+						<div class="comments">
+							<div class="comment" th:each="com:${comments}">
+								<div th:text="${com.comment}"></div>
+							</div>
+						</div>
+						<div>
+							<form th:action="@{/comment_save}" method="post">
+								<div class="form-group">
+									<label for="exampleInputEmail1">您可以在这里输入：</label> <input
+										type="number" style="display:none;" name="id"
+										th:value="${user}" />
+									<textarea placeholder="他/她曾经说过的话" name="comment"
+										class="form-control" rows="6"></textarea>
+									<br /> <input type="submit" class="btn btn-primary btn-lg"
+										value="添加语录" />
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

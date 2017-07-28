@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/my.css}" />
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript">
+	function applyHandsToUser(ids) {
+		$
+		$.ajax({
+			type : "post",
+			url : "hands",
+			data : {
+				id : ids
+			},
+			dataType : "json",
+			success : function(data){
+				if(data) {
+					$("#sq"+ids).css("display","none");
+					$("#dd"+ids).css("display", "block");
+				}
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+	<h1>欢迎访问山威码客社区!</h1>
+	<p>
+		请点击这里就可以<a href="../register">注册</a>啦&nbsp;
+		进入<a href="../index">个人中心</a>
+	</p>
+	<hr />
+	<table class="table table-hover">
+		<thead>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年龄</th>
+			<th>爱好</th>
+			<th width="300px">操作</th>
+		</thead>
+		<tbody th:each="message:${list}">
+			<tr>
+				<td th:text="${message.name}"></td>
+				<td th:text="${message.sex}"></td>
+				<td th:text="${message.age}"></td>
+				<td th:text="${message.hobby}"></td>
+				<td><button th:id="'sq'+${message.personid}" class="btn btn-danger"
+						th:onclick="'applyHandsToUser('+${message.personid}+')'">申请好友添加</button>
+					<button th:id="'dd'+${message.personid}" style="display:none" class="btn btn-warning" disabled="true">等待中</button></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.back {
+	background: url(../photo/top.jpg) no-repeat;
+	min-height: 250px;
+}
+
+.details {
+	padding: 20px;
+}
+
+.details td {
+	font-weight: bolder;
+	border-top: none !important;
+}
+
+.comment-title {
+	margin-top: -20px;
+	padding-bottom: 0px;
+}
+
+.comments {
+	min-height: 400px;
+}
+
+.comment {
+	border-bottom: 1px solid #ddd;
+	min-height: 180px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.comment p {
+	text-indent: 2em;
+	font-size: 16px;
+}
+
+.inputstyle {
+	width: 144px;
+	height: 41px;
+	font-size: 30px;
+	outline: medium none;
+	position: absolute;
+	filter: alpha(opacity = 0);
+	-moz-opacity: 0;
+	opacity: 0;
+	left: -60px;
+	top: 0px;
+	cursor: pointer;
+}
+
+.upload {
+	border-radius:0.5em;
+	margin-top:8px;
+	float: left;
+	height: 41px;
+	background: #d9534f;
+	width: 130px;
+	height: 48px;
+	position: relative;
+	
+}
+
+.up_view {
+	text-align: center;
+	padding-top: 12px;
+	font-size: 15px;
+	color:white;
+	font-weight: 800;
+}
+
+.ftn-bolder {
+	font-weight:bolder;
+}

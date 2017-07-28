@@ -1,0 +1,65 @@
+.ul-body {
+	top:100px;
+	right:0px;
+}
+
+.ul-body li {
+	background-color: #e1e1e1;
+	width: 10px;
+	list-style: none;
+	height:40px;
+	line-height: 40px;
+	margin-top:10px;
+	margin-bottom: 10px;	
+}
+
+.ul-role {
+	text-align: left;
+}
+
+.ul-role li {
+	list-style: none;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+.mark-person-box {
+	margin-top: 11px;
+	margin-bottom:11px;
+	height:50px;
+	clear:both;
+}
+
+.head-image {
+	height: 100%;
+	vertical-align: center;
+    padding-left: 20px;
+}
+
+.head-image img {
+	margin:auto 0px;
+}
+
+.handle {
+	height: 100%;
+}
+
+.ver-middle {
+	margin-top:14px;
+	margin-bottom: 14px;
+}
+
+.info {
+	font-size: 10px;
+	color:#505050;
+}
+
+.img-small {
+	width: 50px;
+	height: 50px;
+}
+
+.img-normal {
+	width: 100px;
+	height:100px;
+}

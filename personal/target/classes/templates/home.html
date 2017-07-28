@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/my.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<div id="header">
+			<div class="jumbotron back">
+				<h2>通讯录</h2>
+				<p>这里记录本人好友通讯录</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="../index" role="button">回到首页</a>
+				</p>
+			</div>
+		</div>
+		<div id="body">
+			<div class="row">
+				<div class="col-md-10 col-md-push-1">
+					<h4>
+						完善资料 <span class="label label-success">录入</span>
+					</h4>
+					<hr />
+					<form enctype="multipart/form-data" class="form-horizontal" th:object="${person}"
+						th:action="@{save}" method="post">
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">姓名</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="exampleInputEmail1"
+										th:field="*{name}" placeholder="姓名" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">年龄</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" th:field="*{age}"
+										id="exampleInputEmail1" placeholder="请输入你的年龄" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">性别</label>
+								<div class="col-sm-10">
+									<label class="radio-inline"> <input type="radio"
+										th:field="*{sex}" name="inlineRadioOptions" id="inlineRadio1"
+										value="男" /> 男
+									</label> <label class="radio-inline"> <input type="radio"
+										th:field="*{sex}" name="inlineRadioOptions" id="inlineRadio2"
+										value="女" /> 女
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">电话</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" th:field="*{number}"
+										id="exampleInputEmail1" placeholder="请输入您的联系方式 " />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">email</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" placeholder="qq邮箱"
+										th:field="*{email}" aria-describedby="basic-addon2" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">爱好</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" placeholder="请输入您的喜好"
+										th:field="*{hobby}" aria-describedby="basic-addon2" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="col-sm-2 control-label">头像上传</label>
+								<div class="col-sm-10">
+									<input type="file" name="path" id="exampleInputFile" />
+									<p class="help-block">请最好上传140*140大小的头像</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-3"></div>
+						<div class="col-sm-12">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-9">
+								<input type="submit" class="btn btn-primary" value="提交" />
+								&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <input type="reset"
+									class="btn btn-default" value="重置" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

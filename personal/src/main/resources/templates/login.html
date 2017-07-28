@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>个人信息系统--登录</title>
+    <meta name="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <form name="f1" id="f1" th:action="@{/person}" method="post">
+      <table>
+        <tr>
+          <td>Login:</td>
+          <td><input type="text" name="username" id="login"/></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" name="password" id="password"/></td>
+        </tr> 
+        <tr>
+          <td colspan="2"><input type="submit"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
